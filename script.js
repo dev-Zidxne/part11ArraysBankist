@@ -64,7 +64,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-
+/*
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -105,4 +105,19 @@ console.log(letters);
 console.log([...arr, ...arr2]);
 
 // JOIN
-console.log(letters.join(' - '));
+console.log(letters.join(' - ')); //a - b - c - d -  e - f - g - h - i - j
+*/
+//////////////////////////////////////////
+// The new at Method
+
+const arr = [23, 11, 64];
+console.log(arr[0]);
+console.log(arr.at(0));
+
+// Getting the last array element
+console.log(arr[arr.length - 1]);
+console.log(arr.slice(-1)[0]);
+console.log(arr.at(-1));
+
+console.log('jonas'.at(0));
+console.log('jonas'.at(-1));
