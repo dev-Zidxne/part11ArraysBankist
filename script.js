@@ -101,7 +101,7 @@ console.log(accounts);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-/*
+
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -109,7 +109,7 @@ const currencies = new Map([
 ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
+/*
 ////////////////////////////////////////////////// Simple Array Methods
 
 let arr = ['a', 'b', 'c', 'd', ' e'];
@@ -290,3 +290,24 @@ const movementDescriptions = movements.map(
 
 console.log(movementDescriptions);
 */
+
+//The filter Method
+
+const deposits = movements.filter(function (mov, i, arr) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawalsFor = movements.filter(mov => mov < 0);
+console.log(withdrawalsFor);
+
+const withdrawals = [];
+
+for (const mov of movements) if (mov < 0) withdrawals.push(mov);
+
+console.log(withdrawals);
