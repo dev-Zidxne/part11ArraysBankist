@@ -83,62 +83,62 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-/*
-displayMovements(account1.movements);
 
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance}€`;
-};
+// displayMovements(account1.movements);
 
-calcDisplayBalance(account1.movements);
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
-    .filter(mov => mov > 0)
-    .reduce((acc, mov) => acc + mov, 0);
-  labelSumIn.textContent = `${incomes}€`;
+// const calcDisplayBalance = function (movements) {
+//   const balance = movements.reduce((acc, mov) => acc + mov, 0);
+//   labelBalance.textContent = `${balance}€`;
+// };
 
-  const out = movements
-    .filter(mov => mov < 0)
-    .reduce((acc, mov) => acc + mov, 0);
-  labelSumOut.textContent = `${Math.abs(out)}€`;
+// calcDisplayBalance(account1.movements);
+// const calcDisplaySummary = function (movements) {
+//   const incomes = movements
+//     .filter(mov => mov > 0)
+//     .reduce((acc, mov) => acc + mov, 0);
+//   labelSumIn.textContent = `${incomes}€`;
 
-  const interest = movements
-    .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
-    .filter((int, i, arr) => {
-      console.log(arr);
-      return int >= 1;
-    })
-    .reduce((acc, int) => acc + int, 0);
-  labelSumInterest.textContent = `${interest}€`;
-};
-calcDisplaySummary(account1.movements);
+//   const out = movements
+//     .filter(mov => mov < 0)
+//     .reduce((acc, mov) => acc + mov, 0);
+//   labelSumOut.textContent = `${Math.abs(out)}€`;
 
-const createUsernames = function (accs) {
-  accs.forEach(function (acc) {
-    acc.username = acc.owner
-      .toLocaleLowerCase()
-      .split(' ')
-      .map(name => name[0])
-      .join('');
-  });
-};
+//   const interest = movements
+//     .filter(mov => mov > 0)
+//     .map(deposit => (deposit * 1.2) / 100)
+//     .filter((int, i, arr) => {
+//       console.log(arr);
+//       return int >= 1;
+//     })
+//     .reduce((acc, int) => acc + int, 0);
+//   labelSumInterest.textContent = `${interest}€`;
+// };
+// calcDisplaySummary(account1.movements);
 
-createUsernames(accounts);
+// const createUsernames = function (accs) {
+//   accs.forEach(function (acc) {
+//     acc.username = acc.owner
+//       .toLocaleLowerCase()
+//       .split(' ')
+//       .map(name => name[0])
+//       .join('');
+//   });
+// };
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
+// createUsernames(accounts);
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// /////////////////////////////////////////////////
+// /////////////////////////////////////////////////
+// // LECTURES
+
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
+/*
 ////////////////////////////////////////////////// Simple Array Methods
 
 let arr = ['a', 'b', 'c', 'd', ' e'];
@@ -448,7 +448,7 @@ TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
 TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
 
 GOOD LUCK 😀
-*/
+
 
 const calcAverageHumanAge = ages =>
   ages
@@ -461,3 +461,23 @@ const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
 
 console.log(avg1, avg2);
+*/
+
+const firstWIthdrawal = movements.find(mov => mov < 0);
+
+console.log(movements);
+console.log(firstWIthdrawal);
+
+console.log(accounts);
+
+// const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+
+// console.log(account);
+
+// End of video challenge :)
+
+for (const acc of accounts) {
+  if (acc.owner === 'Jessica Davis') {
+    console.log('Jessica Davis');
+  }
+}
