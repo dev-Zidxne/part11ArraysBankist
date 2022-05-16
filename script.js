@@ -83,6 +83,7 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
+/*
 displayMovements(account1.movements);
 
 const calcDisplayBalance = function (movements) {
@@ -136,8 +137,8 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 130];
-/*
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
 ////////////////////////////////////////////////// Simple Array Methods
 
 let arr = ['a', 'b', 'c', 'd', ' e'];
@@ -413,7 +414,7 @@ GOOD LUCK 😀
 
 // console.log(avg1, avg2);
 
-// The map Method
+//The map Method
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // const eurToUsd = 1.1;
@@ -422,17 +423,41 @@ GOOD LUCK 😀
 //   return mov * eurToUsd;
 // });
 
-const eurToUsd = 1.1;
-console.log(movements);
+// const eurToUsd = 1.1;
+// console.log(movements);
 
-// PIPELINE
-const totalDepositsInUSD = movements
-  .filter(mov => mov > 0)
-  .map((mov, i, arr) => {
-    // console.log(arr);
-    return mov * eurToUsd;
-  })
-  // .map((mov, i ,arr) => mov * eurToUsd)
-  .reduce((acc, mov) => acc + mov, 0);
+// // PIPELINE
+// const totalDepositsInUSD = movements
+//   .filter(mov => mov < 0)
+//   .map((mov, i, arr) => {
+//     console.log(arr);
+//     return mov * eurToUsd;
+//   })
+//   // .map((mov, i ,arr) => mov * eurToUsd)
+//   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(totalDepositsInUSD);
+// console.log(totalDepositsInUSD);
+
+///////////////////////////////////////
+// Coding Challenge #3
+
+/* 
+Rewrite the 'calcAverageHumanAge' function from the previous challenge, but this time as an arrow function, and using chaining!
+
+TEST DATA 1: [5, 2, 4, 1, 15, 8, 3]
+TEST DATA 2: [16, 6, 10, 5, 6, 1, 4]
+
+GOOD LUCK 😀
+*/
+
+const calcAverageHumanAge = ages =>
+  ages
+    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, curr, i, arr) => acc + curr / arr.length, 0);
+
+const avg1 = calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+
+const avg2 = calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+
+console.log(avg1, avg2);
